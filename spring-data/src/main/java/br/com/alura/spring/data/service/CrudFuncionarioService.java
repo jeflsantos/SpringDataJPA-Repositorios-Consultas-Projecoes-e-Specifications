@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 import br.com.alura.spring.data.orm.Cargo;
 import br.com.alura.spring.data.orm.Funcionario;
-import br.com.alura.spring.data.orm.UnidadeDeTrabalho;
+import br.com.alura.spring.data.orm.UnidadeTrabalho;
 import br.com.alura.spring.data.repository.CargoRepository;
 import br.com.alura.spring.data.repository.FuncionarioRepository;
-import br.com.alura.spring.data.repository.UnidadeDeTrabalhoRepository;
+import br.com.alura.spring.data.repository.UnidadeTrabalhoRepository;
 
 @Service
 public class CrudFuncionarioService {
@@ -24,11 +24,11 @@ public class CrudFuncionarioService {
 	
 	private final CargoRepository cargoRepository;
 	private final FuncionarioRepository funcionarioRepository;
-	private final UnidadeDeTrabalhoRepository unidadeDeTrabalhoRepository;
+	private final UnidadeTrabalhoRepository unidadeDeTrabalhoRepository;
 	
 	
 	public CrudFuncionarioService(FuncionarioRepository funcionarioRepository, 
-			CargoRepository cargoRepository, UnidadeDeTrabalhoRepository unidadeDeTrabalhoRepository) {
+			CargoRepository cargoRepository, UnidadeTrabalhoRepository unidadeDeTrabalhoRepository) {
 		this.cargoRepository = cargoRepository;
 		this.funcionarioRepository = funcionarioRepository;
 		this.unidadeDeTrabalhoRepository = unidadeDeTrabalhoRepository;
@@ -85,7 +85,7 @@ public void inicial(Scanner scanner) {
 		System.out.println("Digite o cargoId");
 		Integer cargoId = scanner.nextInt();
 		
-		List<UnidadeDeTrabalho> unidades = unidade(scanner);
+		List<UnidadeTrabalho> unidades = unidade(scanner);
 		
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome(nome);
@@ -94,23 +94,23 @@ public void inicial(Scanner scanner) {
 		funcionario.setDataContratacao(LocalDate.parse(dataContratacao, formatter));
 		Optional<Cargo> cargo = cargoRepository.findById(cargoId);
 		funcionario.setCargo(cargo.get());
-		funcionario.setUnidadeDeTrabalho(unidades);
+		funcionario.setUnidadeTrabalho(unidades);
 		
 		funcionarioRepository.save(funcionario);
 		System.out.println("Salvo");
 		
 	}
 	
-	private List<UnidadeDeTrabalho> unidade (Scanner scanner){
+	private List<UnidadeTrabalho> unidade (Scanner scanner){
 		Boolean isTrue = true;
-		List<UnidadeDeTrabalho> unidades = new ArrayList<>();
+		List<UnidadeTrabalho> unidades = new ArrayList<>();
 		
 		while(isTrue) {
 			System.out.println("Digite o unidadeId (Para sair digite 0)");
 			Integer unidadeId = scanner.nextInt();
 			
 			if (unidadeId != 0) {
-				Optional<UnidadeDeTrabalho> unidade = unidadeDeTrabalhoRepository.findById(unidadeId);
+				Optional<UnidadeTrabalho> unidade = unidadeDeTrabalhoRepository.findById(unidadeId);
 				unidades.add(unidade.get());
 			} else {
 				isTrue = false;

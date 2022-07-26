@@ -35,7 +35,7 @@ public class Funcionario {
 	@JoinTable(name = "funcionarios_unidades", joinColumns = {
 			@JoinColumn(name = "fk_funcionario")}, 
 	inverseJoinColumns = {@JoinColumn(name = "fk_unidade") })
-	private List<UnidadeDeTrabalho> unidadeDeTrabalho;
+	private List<UnidadeTrabalho> unidadeTrabalho;
 	
 	
 	public Integer getId() {
@@ -74,11 +74,11 @@ public class Funcionario {
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
-	public List<UnidadeDeTrabalho> getUnidadeDeTrabalho() {
-		return unidadeDeTrabalho;
+	public List<UnidadeTrabalho> getUnidadeTrabalho() {
+		return unidadeTrabalho;
 	}
-	public void setUnidadeDeTrabalho(List<UnidadeDeTrabalho> unidadeDeTrabalho) {
-		this.unidadeDeTrabalho = unidadeDeTrabalho;
+	public void setUnidadeTrabalho(List<UnidadeTrabalho> unidadeTrabalho) {
+		this.unidadeTrabalho = unidadeTrabalho;
 	}
 	
 	
