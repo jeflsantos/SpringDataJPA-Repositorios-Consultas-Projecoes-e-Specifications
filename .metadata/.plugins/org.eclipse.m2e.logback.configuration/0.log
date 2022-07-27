@@ -2342,3 +2342,8 @@
 2022-07-27 06:25:55,408 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2022-07-27 06:25:55,411 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-07-27 06:25:55,411 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jefls\OneDrive\Documentos\GitHub\Formacao-Spring-Framework\SpringDataJPA-Repositorios-Consultas-Projecoes-e-Specifications\spring-data\src\test\resources
+2022-07-27 06:31:38,279 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-27 06:31:38,280 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-07-27 06:31:38,282 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-27 06:31:38,284 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-27 06:31:38,284 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\jefls\OneDrive\Documentos\GitHub\Formacao-Spring-Framework\SpringDataJPA-Repositorios-Consultas-Projecoes-e-Specifications\spring-data\src\test\resources
