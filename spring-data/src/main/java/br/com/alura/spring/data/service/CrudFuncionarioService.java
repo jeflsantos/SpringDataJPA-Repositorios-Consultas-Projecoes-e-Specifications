@@ -22,21 +22,21 @@ public class CrudFuncionarioService {
 	private Boolean system = true;
 	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
-	private final CargoRepository cargoRepository;
 	private final FuncionarioRepository funcionarioRepository;
+	private final CargoRepository cargoRepository;
 	private final UnidadeTrabalhoRepository unidadeTrabalhoRepository;
 	
 	
 	public CrudFuncionarioService(FuncionarioRepository funcionarioRepository, 
 			CargoRepository cargoRepository, UnidadeTrabalhoRepository unidadeTrabalhoRepository) {
-		this.cargoRepository = cargoRepository;
 		this.funcionarioRepository = funcionarioRepository;
+		this.cargoRepository = cargoRepository;
 		this.unidadeTrabalhoRepository = unidadeTrabalhoRepository;
 	}
 	
 	public void inicial(Scanner scanner) {
 		while(system) {
-			System.out.println("Qual acao de cargo deseja executar");
+			System.out.println("Qual acao de FUNCIONARIO deseja executar");
 			System.out.println("0 - Sair");
 			System.out.println("1 - Salvar");
 			System.out.println("2 - Atualizar");
