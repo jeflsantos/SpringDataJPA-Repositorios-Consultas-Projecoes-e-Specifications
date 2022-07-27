@@ -18,33 +18,26 @@ public class Cargo {
 	private String descricao;
 	@OneToMany(mappedBy = "cargo")
 	private List<Funcionario> funcionario;
-	
-	
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	
 	}
-	public List<Funcionario> getFuncionario() {
-		return funcionario;
-	}
-	public void setFuncionario(List<Funcionario> funcionario) {
-		this.funcionario = funcionario;
-	}
-	
+
 	@Override
 	public String toString() {
 		return "Cargo [id=" + id + ", descricao=" + descricao + "]";
 	}
-	
-	
 
 }

@@ -10,7 +10,7 @@ import br.com.alura.spring.data.repository.FuncionarioRepository;
 
 @Service
 public class RelatoriosService {
-
+	
 	private Boolean system = true;
 	private final FuncionarioRepository funcionarioRepository;
 
@@ -18,8 +18,8 @@ public class RelatoriosService {
 		this.funcionarioRepository = funcionarioRepository;
 	}
 
-	public void inicial(Scanner scanner) {
 
+	public void inicial(Scanner scanner) {
 		while (system) {
 			System.out.println("Qual ação de cargo deseja executar");
 			System.out.println("0 - Sair");
@@ -37,7 +37,7 @@ public class RelatoriosService {
 				break;
 			}
 		}
-
+		
 	}
 
 	private void buscaFuncionarioNome(Scanner scanner) {
@@ -46,4 +46,7 @@ public class RelatoriosService {
 		List<Funcionario> list = funcionarioRepository.findByNome(nome);
 		list.forEach(System.out::println);
 	}
+
+	
+
 }

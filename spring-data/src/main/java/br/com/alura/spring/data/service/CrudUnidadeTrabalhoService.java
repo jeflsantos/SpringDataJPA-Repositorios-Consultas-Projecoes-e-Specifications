@@ -12,15 +12,14 @@ public class CrudUnidadeTrabalhoService {
 
 	private Boolean system = true;
 	private final UnidadeTrabalhoRepository unidadeTrabalhoRepository;
-
+	
 	public CrudUnidadeTrabalhoService(UnidadeTrabalhoRepository unidadeTrabalhoRepository) {
 		this.unidadeTrabalhoRepository = unidadeTrabalhoRepository;
 	}
 	
 	public void inicial(Scanner scanner) {
-		
 		while(system) {
-			System.out.println("Qual ação de cargo deseja executar");
+			System.out.println("Qual acao de cargo deseja executar");
 			System.out.println("0 - Sair");
 			System.out.println("1 - Salvar");
 			System.out.println("2 - Atualizar");
@@ -42,49 +41,47 @@ public class CrudUnidadeTrabalhoService {
 			case 4:
 				deletar(scanner);
 				break;
-
 			default:
 				system = false;
 				break;
 			}
+			
 		}
 		
-		
 	}
-
+	
 	private void salvar(Scanner scanner) {
-		System.out.println("Digite o nome da Unidade");
-		String nome = scanner.next();
-		
-		System.out.println("Digite o endereço");
-		String endereco = scanner.next();
-		
-		UnidadeTrabalho unidadeTrabalho = new UnidadeTrabalho();
-		unidadeTrabalho.setDescricao(nome);
-		unidadeTrabalho.setEndereco(endereco);
-		
-		
-		unidadeTrabalhoRepository.save(unidadeTrabalho);
-		System.out.println("Salvo");
+		System.out.println("Digite o nome da unidade");
+        String nome = scanner.next();
+
+        System.out.println("Digite o endereco");
+        String endereco = scanner.next();
+
+        UnidadeTrabalho unidadeTrabalho = new UnidadeTrabalho();
+        unidadeTrabalho.setDescricao(nome);
+        unidadeTrabalho.setEndereco(endereco);
+
+        unidadeTrabalhoRepository.save(unidadeTrabalho);
+        System.out.println("Salvo");
 	}
 	
 	private void atualizar(Scanner scanner) {
-		System.out.println("Digite o Id");
-		Integer id = scanner.nextInt();
-		
-		System.out.println("Digite o nome da unidade");
-		String nome = scanner.next();
-		
-		System.out.println("Digite o endereço");
-		String endereco = scanner.next();
-		
-		UnidadeTrabalho unidadeTrabalho = new UnidadeTrabalho();
-		unidadeTrabalho.setId(id);
-		unidadeTrabalho.setDescricao(nome);
-		unidadeTrabalho.setEndereco(endereco);
-		
-		unidadeTrabalhoRepository.save(unidadeTrabalho);
-		System.out.println("Alterado");
+		System.out.println("Digite o id");
+        Integer id = scanner.nextInt();
+
+        System.out.println("Digite o nome da unidade");
+        String nome = scanner.next();
+
+        System.out.println("Digite o endereco");
+        String endereco = scanner.next();
+
+        UnidadeTrabalho unidadeTrabalho = new UnidadeTrabalho();
+        unidadeTrabalho.setId(id);
+        unidadeTrabalho.setDescricao(nome);
+        unidadeTrabalho.setEndereco(endereco);
+
+        unidadeTrabalhoRepository.save(unidadeTrabalho);
+        System.out.println("Alterado");
 	}
 	
 	private void visualizar() {
@@ -98,4 +95,5 @@ public class CrudUnidadeTrabalhoService {
 		unidadeTrabalhoRepository.deleteById(id);
 		System.out.println("Deletado");
 	}
+	
 }
